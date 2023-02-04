@@ -1,21 +1,21 @@
-pipeline{
+pipeline {
     agent any
-    tools {
-        maven "M3"
-    }
-    stages {
 
-        stage ("Complie")
-        steps {
-            sh "mvn clean complie"
-        }
-        stage ("Test") {
+    stages {
+        stage('Build') {
             steps {
-                sh "mvn clean test"
+                echo 'Building..'
             }
         }
-        stage ('Deploy') {
-            sh "mvn clean install"
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
