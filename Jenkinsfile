@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t nest-hello-word .'
+                sh 'docker build -t nest-hello-word:latest .'
             }
         }
         stage('Test') {
